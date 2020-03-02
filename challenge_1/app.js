@@ -8,6 +8,7 @@ class Board {
         ]
 
         this.play();
+        this.move = this.move.bind(this)
 
     }
     /////////////METHODS///////////////////
@@ -24,6 +25,10 @@ class Board {
                 let box = document.createElement('td');
                 box.textContent =  'hello';
                 box.setAttribute('style', 'border: 2px solid')
+                box.setAttribute('height', '50')
+                box.setAttribute('width', '50')
+                box.setAttribute('id', x + '.' + y);
+                box.setAttribute('value', '')
                 rows.appendChild(box);
             }
         table.appendChild(rows);
@@ -34,11 +39,15 @@ class Board {
         table.setAttribute('style', 'border: 3px solid')
         
         document.getElementById('app').appendChild(table)
+        document.getElementById('app').addEventListener('click', this.move)
     }
 
     //onclick functionality
 
-    
+    move () {
+        console.log(event.target)
+        document.getElementById(event.target.id).textContent = 'X'
+    }
 
 
 
