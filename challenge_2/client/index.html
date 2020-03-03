@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8"/>
     <head>
+        <meta charset="utf-8"/>
         <title>Sales Report</title>
     </head>
     <body> 
         <h1>Sales Report</h1>
-        <div> 
-            <form action="localhost:3000" method="post">
-
-            </form>
-        </div>
+        <form action="http://localhost:3000/api/report" method="post">
+            <li>
+                <label for="data">JSON File</label>
+                <textarea id="data" name="json_file"></textarea>
+            </li>
+            <li class="button">
+                <button type="submit">Send File</button>
+              </li>
+        </form> 
     </body>
     <script src="app.js"></script>
     <script src="server.js"></script>
