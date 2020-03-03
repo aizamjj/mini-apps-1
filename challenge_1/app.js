@@ -8,6 +8,7 @@ class Board {
         ]
 
         this.play();
+        this.nextMove = 'X';
         this.move = this.move.bind(this)
 
     }
@@ -23,12 +24,13 @@ class Board {
             let rows = document.createElement('tr');
             for (var y = 0; y < this.grid.length; y ++) {
                 let box = document.createElement('td');
-                box.textContent =  'hello';
+                box.textContent =  '';
                 box.setAttribute('style', 'border: 2px solid')
                 box.setAttribute('height', '50')
                 box.setAttribute('width', '50')
                 box.setAttribute('id', x + '.' + y);
                 box.setAttribute('value', '')
+                box.setAttribute('align', 'center')
                 rows.appendChild(box);
             }
         table.appendChild(rows);
@@ -42,36 +44,20 @@ class Board {
         document.getElementById('app').addEventListener('click', this.move)
     }
 
-    //onclick functionality
-
     move () {
-        console.log(event.target)
-        document.getElementById(event.target.id).textContent = 'X'
+        let playBox = document.getElementById(event.target.id);
+        if (!playBox.textContent) {
+            if (this.nextMove === 'X') {
+                playBox.textContent = 'X'
+                this.nextMove = 'O'
+            } else {
+                playBox.textContent = 'O';
+                this.nextMove = 'X'
+            }
+        }
     }
-
-
-
     //checking for conflicts 
-
-    
+        //
 }
 
-
-//////////Player/////////////////
-class Player {
-    constructor (symbol) {
-        this.symbol = symbol;
-    }
-}
-//////////GAME///////////////////
-
-class Game {
-    constructor () {
-        this.board = new Board();
-        this.players = [
-            new Player ('x'),
-            new Player ('o')
-        ]
-    }
-}
-var too = new Board();
+var board = new Board();
