@@ -1,0 +1,28 @@
+{
+  "name": "challenge_3",
+  "version": "1.0.0",
+  "description": "GOAL: Build a single-page app that takes a user through a series of forms that simulate a shopping cart checkout experience.",
+  "main": "app.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "build": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build:react": "babel client --watch --out-dir public"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.0"
+  }
+}
