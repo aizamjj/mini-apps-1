@@ -9,12 +9,12 @@ app.use('/', express.static(path.join(__dirname, './client')))
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/report', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Getting');
     
 })
 
-app.post('/api/report', (req, res) => {
+app.post('/', (req, res) => {
     const data = JSON.parse(req.body.json_file);
 
     ///////////Generate CSV report//////////////
@@ -44,6 +44,8 @@ app.post('/api/report', (req, res) => {
     }
 let generatedCSV = generateReport(data);
 res.send(generatedCSV);
+
+
 })
   
 
