@@ -1,4 +1,16 @@
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render () {
+    return (
+      <button>Checkout</button>
+    )
+  }
+}
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <App/>,
   document.getElementById('app')
 );
