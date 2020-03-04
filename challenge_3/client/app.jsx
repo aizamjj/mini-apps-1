@@ -1,12 +1,18 @@
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  render () {
+
+  handleClick(e) {
+    e.preventDefault();
+    console.log('Clicked')
+  }
+  render() {
     return (
-      <button>Checkout</button>
-    )
+      <button onClick={this.handleClick}>Checkout</button>
+    );
   }
 }
 
