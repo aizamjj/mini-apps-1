@@ -1,13 +1,15 @@
 GOAL: Build a single-page app that takes a user through a series of forms that simulate a shopping cart checkout experience.
 
 STEPS:
-[ ] Use Express to serve up an index.html file and its associated assets
-  [ ] Build your Express app inside server.js and your client app inside the client folder.
-  [ ] For the basic requirements, you MUST place all of your React components into one file, app.jsx.
-  [ ] Link your transpiled component file from index.html. DO NOT USE WEBPACK
-[ ] Build your UI using ReactJS and pre-compile your views using Babel
+[X] Use Express to serve up an index.html file and its associated assets
+  [X] Build your Express app inside server.js and your client app inside the client folder.
+  [X] For the basic requirements, you MUST place all of your React components into one file, app.jsx.
+  [X] Link your transpiled component file from index.html. DO NOT USE WEBPACK
+[X] Build your UI using ReactJS and pre-compile your views using Babel
   [ ] The homepage of your application should have a Checkout button, which when clicked, takes the user to the first of several forms. We'll call the forms F1, F2, F3.
     [ ] F1 collects name, email, and password for account creation.
+      - create component Form that is reusable for all forms with minor tweaks
+
     [ ] F2 collects ship to address (line 1, line 2, city, state, zip code) and phone number.
     [ ] F3 collects credit card #, expiry date, CVV, and billing zip code.
     [ ] At each step, a Next button allows the user to progress to the next step in the checkout process. The final step is a confirmation page which summarizes the data collected in the prior three steps. This page contains a Purchase button that completes the purchase. When the purchase is complete, the user is returned to the homepage.
